@@ -1,0 +1,127 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:p="http://primefaces.org/ui">
+
+    <html>
+        <h:head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <title>Prueba con Primefaces</title>
+        </h:head>
+
+        <h:body>
+
+            <p:panel header="Lista de Tareas">
+                <div class="card">
+                    <p:dataTable  id="datosTarea" var="dato" value="#{manejadorBean3.tareas1}" sortMode="single" paginator="true" rows="10">
+                        <p:column headerText="Tarea_nombre">
+                            <h:outputText value="#{dato.tarea_nombre}" />
+                        </p:column>
+
+                        <p:column headerText="Tarea_descripcion">
+                            <h:outputText value="#{dato.tarea_descripcion}" />
+                        </p:column>
+
+                        <p:column headerText="Fecha_entrega">
+                            <h:outputText value="#{dato.fecha_entrega}" />
+                        </p:column>
+
+                        <p:column headerText="Fecha_asignacion">
+                            <h:outputText value="#{dato.fecha_asignacion}" />
+                        </p:column> 
+
+                        <p:column headerText="Prioridad">
+                            <h:outputText value="#{dato.prioridad_tarea}" />
+                        </p:column>
+                        <p:column headerText="Activo">
+                            <h:outputText value="#{dato.activo}" />
+                        </p:column>
+
+                        
+                        <p:column headerText="Proyecto_nombre">
+                            <h:outputText value="#{dato.proyecto_nombre}" />
+                        </p:column> 
+
+                        <p:column headerText="Usuario_nombre">
+                            <h:outputText value="#{dato.usuario_nombre}" />
+                        </p:column> 
+
+                    </p:dataTable>
+                </div>  
+
+            </p:panel>
+            <h:form>
+                <p:messages id="messages" showDetail="true" closable="true">
+                    <p:autoUpdate/>
+                </p:messages>
+
+                <p:panel header="Crear tarea">
+                    <br/>
+                    <span class="ui-float-label">
+                        <p:inputText id="Tarea_nombre" value="#{manejadorBean3.tarea_nombre}"/>
+                        <p:outputLabel for="@previous" value="Tarea_nombre"/>
+                    </span>
+                    <br/>
+                    <span class="ui-float-label">
+                        <p:inputText id="Tarea_descripcion" value="#{manejadorBean3.tarea_descripcion}"/>
+                        <p:outputLabel for="@previous" value="tarea_descripcion"/>
+                    </span>
+                    <br/>
+                    <span class="ui-float-label">
+                        <p:inputText id="Fecha_entrega" value="#{manejadorBean3.fecha_entrega}"/>
+                        <p:outputLabel for="@previous" value="Fecha_entrega"/>
+                    </span>
+                    <br/>
+                    <span class="ui-float-label">
+                        <p:inputText id="Fecha_asignacion" value="#{manejadorBean3.fecha_asignacion}"/>
+                        <p:outputLabel for="@previous" value="Fecha_asignacion"/>
+                    </span> 
+
+                    <br/>
+                    <p:outputLabel for="@next" value="Prioridad"/>
+                    <br/>
+                    <p:selectOneMenu id="prioridad" value="#{manejadorBean3.prioridad}" label="Seleccione prioridad">
+                        <f:selectItem itemLabel="ALTA" itemValue="1"/>
+                        <f:selectItem itemLabel="MEDIA" itemValue="2"/>
+                        <f:selectItem itemLabel="BAJA" itemValue="3"/>
+                    </p:selectOneMenu>
+
+                    <br/>
+                    <span >
+                        <p:outputLabel for="@next" value="Activo"/>
+                        <br/>
+                        <p:selectOneMenu id="activo" value="#{manejadorBean3.activo}" >
+                            <f:selectItem itemLabel="Activo" itemValue="1"/>
+                            <f:selectItem itemLabel="Inactivo" itemValue="0"/>
+                        </p:selectOneMenu>
+
+                    </span>    
+
+                    <span class="ui-float-label">
+                        <p:inputText id="Proyecto_nombre" value="#{manejadorBean3.proyecto_nombre}"/>
+                        <p:outputLabel for="@previous" value=" Proyecto_nombre"/>
+                    </span>
+
+                    <br/>
+                    <span class="ui-float-label">
+                        <p:inputText id="Usuario_nombre" value="#{manejadorBean3.usuario_nombre}"/>
+                        <p:outputLabel for="@previous" value=" Usuario_nombre"/>
+                    </span>
+
+
+                    <p:commandButton value="Ingresar " action="#{manejadorBean3.guardar()}" update="msg,datosTarea"/>
+                    <br/>
+                    <h:outputLabel id="msg" value="#{manejadorBean3.mensaje}" />
+
+
+                </p:panel>
+                <p:commandButton value="Salir " action=" index.xhtml "/>
+            </h:form>
+        </h:body>
+    </html>
+</f:view>
