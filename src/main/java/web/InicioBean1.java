@@ -19,10 +19,10 @@ import javax.faces.context.FacesContext;
  */
 @ManagedBean
 @SessionScoped
-public class InicioBean {
+public class InicioBean1 {
     
    public String Ingresar (){
-       return "tareas";
+       return "proyectos";
    }
    
 }

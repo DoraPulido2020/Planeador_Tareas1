@@ -31,8 +31,8 @@ public class OperTarea implements Operaciones<Tarea> {
                 PreparedStatement ps = cActiva.prepareStatement(sql);
                 ps.setString(1, dato.getTarea_nombre());
                 ps.setString(2, dato.getTarea_descripcion());
-                ps.setDate(3, (Date) dato.getFecha_entrega());
-                ps.setDate(4, (Date) dato.getFecha_asignacion());
+                ps.setString(3, dato.getFecha_entrega());
+                ps.setString(4, dato.getFecha_asignacion());
                 ps.setString(5, dato.getPrioridad_tarea().getNombre());
                 ps.setInt(6, dato.getActivo());
                 ps.setInt(7, dato.getProyecto_id());
@@ -62,8 +62,8 @@ public class OperTarea implements Operaciones<Tarea> {
                 ps = cActiva.prepareStatement(sql);
                 ps.setString(1, dato.getTarea_nombre());
                 ps.setString(2, dato.getTarea_descripcion());
-                ps.setDate(3, (Date) dato.getFecha_entrega());
-                ps.setDate(4, (Date) dato.getFecha_asignacion());
+                ps.setString(3, dato.getFecha_entrega());
+                ps.setString(4, dato.getFecha_asignacion());
                 ps.setString(5, dato.getPrioridad_tarea().getNombre());
                 ps.setInt(6, dato.getActivo());
                 ps.setInt(7, dato.getProyecto_id());
@@ -105,8 +105,8 @@ public class OperTarea implements Operaciones<Tarea> {
                     e.setTarea_id(tarea_id);
                     e.setTarea_nombre(rs.getString("tarea_nombre"));
                     e.setTarea_descripcion(rs.getString("tarea_descripcion"));
-                    e.setFecha_entrega(rs.getDate("fecha_entrega"));
-                    e.setFecha_asignacion(rs.getDate("fecha_asignacion"));
+                    e.setFecha_entrega(rs.getString("fecha_entrega"));
+                    e.setFecha_asignacion(rs.getString("fecha_asignacion"));
                     String pri = rs.getString("Prioridadtarea");
                     e.setPrioridad_tarea(validaEnum(pri));
                     e.setActivo(rs.getInt("Activo"));
@@ -159,8 +159,8 @@ public class OperTarea implements Operaciones<Tarea> {
                     Long tarea_id = rs.getLong("tarea_id");
                     mat.setTarea_nombre(rs.getString("tarea_nombre"));
                     mat.setTarea_descripcion(rs.getString("tarea_descripcion"));
-                    mat.setFecha_entrega(rs.getDate("///"));
-                    mat.setFecha_asignacion(rs.getDate("///"));
+                    mat.setFecha_entrega(rs.getString("///"));
+                    mat.setFecha_asignacion(rs.getString("///"));
                     String pri = rs.getString("Prioridadtarea");
                     mat.setPrioridad_tarea(validaEnum(pri));
                     mat.setActivo(rs.getInt("Activo"));

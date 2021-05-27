@@ -1,0 +1,83 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:p="http://primefaces.org/ui">
+
+    <html>
+        <h:head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <title>Prueba con Primefaces</title>
+        </h:head>
+
+        <h:body>
+
+            <p:panel header="Lista de Proyectos">
+                <div class="card">
+                    <p:dataTable  id="datosProyecto" var="dato" value="#{manejadorBean4.proyecto1}" sortMode="single" paginator="true" rows="10">
+                        <p:column headerText="Proyecto_nombre">
+                            <h:outputText value="#{dato.proyecto_nombre}" />
+                        </p:column>
+
+                        <p:column headerText="Proyecto_descripcion">
+                            <h:outputText value="#{dato.proyecto_descripcion}" />
+                        </p:column>
+
+                        <p:column headerText="Fecha_inicio">
+                            <h:outputText value="#{dato.fecha_inicio}" />
+                        </p:column>
+
+                        <p:column headerText="Fecha_fin">
+                            <h:outputText value="#{dato.fecha_fin}" />
+                        </p:column> 
+
+
+                    </p:dataTable>
+                </div>  
+
+            </p:panel>
+            <h:form>
+                <p:messages id="messages" showDetail="true" closable="true">
+                    <p:autoUpdate/>
+                </p:messages>
+
+                <p:panel header="Crear proyecto">
+                    <br/>
+                    <span class="ui-float-label">
+                        <p:inputText id="Proyecto_nombre" value="#{manejadorBean4.proyecto_nombre}"/>
+                        <p:outputLabel for="@previous" value="Proyecto_nombre"/>
+                    </span>
+                    <br/>
+                    <span class="ui-float-label">
+                        <p:inputText id="Proyecto_descripcion" value="#{manejadorBean4.proyecto_descripcion}"/>
+                        <p:outputLabel for="@previous" value="Proyecto_descripcion"/>
+                    </span>
+                    <br/>
+                    <span class="ui-float-label">
+                        <p:inputText id="Fecha_inicio" value="#{manejadorBean4.fecha_inicio}"/>
+                        <p:outputLabel for="@previous" value="Fecha_inicio"/>
+                    </span>
+                    <br/>
+                    <span class="ui-float-label">
+                        <p:inputText id="Fecha_fin" value="#{manejadorBean4.fecha_fin}"/>
+                        <p:outputLabel for="@previous" value="Fecha_fin"/>
+                    </span> 
+
+                    <br/>
+
+                    <p:commandButton value="Ingresar " action="#{manejadorBean4.guardar()}" update="msg,datosProyecto"/>
+                    <br/>
+                    <h:outputLabel id="msg" value="#{manejadorBean4.mensaje}" />
+
+
+                </p:panel>
+                <p:commandButton value="Salir " action=" index.xhtml "/>
+            </h:form>
+        </h:body>
+    </html>
+</f:view>
+

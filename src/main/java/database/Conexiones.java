@@ -14,7 +14,7 @@ import java.sql.SQLException;
  * @author Dora
  */
 public class Conexiones {
-    private final String URL = "C:\\Users\\Luz Pulido\\Desktop\\PLAN_TAREA\\Planeador _Tareas1.db";
+    private final String URL = "C:\\Users\\Luz Pulido\\Desktop\\PLAN_TAREA\\Planeador_Tareas1.db";
     
     public Connection conectarse(){
         try {

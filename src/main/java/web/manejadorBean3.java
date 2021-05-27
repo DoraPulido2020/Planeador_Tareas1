@@ -25,8 +25,8 @@ public class manejadorBean3 {
 
     private String tarea_nombre;
     private String tarea_descripcion;
-    private Date fecha_entrega;
-    private Date fecha_asignacion;
+    private String fecha_entrega;
+    private String fecha_asignacion;
     private Integer prioridad;
     private Integer activo;
     /*private Integer proyecto_id;*/
@@ -43,11 +43,11 @@ public class manejadorBean3 {
         return tarea_descripcion;
     }
 
-    public Date getFecha_entrega() {
+    public String getFecha_entrega() {
         return fecha_entrega;
     }
 
-    public Date getFecha_asignacion() {
+    public String getFecha_asignacion() {
         return fecha_asignacion;
     }
 
@@ -79,11 +79,11 @@ public class manejadorBean3 {
         this.tarea_descripcion = tarea_descripcion;
     }
 
-    public void setFecha_entrega(Date fecha_entrega) {
+    public void setFecha_entrega(String fecha_entrega) {
         this.fecha_entrega = fecha_entrega;
     }
 
-    public void setFecha_asignacion(Date fecha_asignacion) {
+    public void setFecha_asignacion(String fecha_asignacion) {
         this.fecha_asignacion = fecha_asignacion;
     }
 
