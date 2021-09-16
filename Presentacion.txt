@@ -1,0 +1,16 @@
+﻿Nombre: Dora Cecilia Pulido Porras
+Correo electrónico: docepul@gmail.com
+Rol: Scrum master
+Dirección: Bogotá
+Soy estudiante de Ingeniería de Sistemas.
+Actividades como Scrum Master
+Realice las ceremonias de Scrum y el calendario de cada una.
+Por google meet invité a los integrantes del equipo en el horario de 8:15 a 8.30 am a realizar la reunión diaria, esta tarea dura 8 semanas. Además cree una cuenta en trello y asigné las actividades en el backlog, cada integrante va sacando una tarea y la va posicionando en el tablero según el progreso de la misma.
+Avances de las actividades:
+•	Creación equipo de trabajo.
+•	Asignación de Roles.
+•	Programación ceremonias Scrum- Daily.
+•	Descarga de Git.
+•	Descarga de Visual Studio Code.
+•	Cuentas en Github.
+•	Tablero en Trello.
